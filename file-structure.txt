@@ -1,0 +1,190 @@
+
+just-restore/
+│
+├── app/
+│   ├── (marketing)/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   │
+│   │   ├── about-me/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── commission/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── gallery/
+│   │   │   ├── page.tsx
+│   │   │   └── [category]/
+│   │   │       ├── page.tsx
+│   │   │       └── [project]/
+│   │   │           └── page.tsx
+│   │   │
+│   │   ├── workshops/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── contact/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── faq/
+│   │   │   └── page.tsx
+│   │   │
+│   │   └── terms/
+│   │       └── page.tsx
+│   │
+│   ├── api/
+│   │   └── upload/
+│   │       └── route.ts
+│   │
+│   ├── actions/
+│   │   ├── submit-commission.ts
+│   │   ├── submit-workshop.ts
+│   │   └── submit-contact.ts
+│   │
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── not-found.tsx
+│   ├── sitemap.ts
+│   └── robots.ts
+│
+├── components/
+│   ├── layout/
+│   │   ├── Header.tsx
+│   │   ├── DesktopNavigation.tsx
+│   │   ├── MobileNavigation.tsx
+│   │   ├── Footer.tsx
+│   │   └── SocialLinks.tsx
+│   │
+│   ├── home/
+│   │   ├── HomeHero.tsx
+│   │   ├── ArtistIntroduction.tsx
+│   │   ├── ArtisticPhilosophy.tsx
+│   │   ├── FeaturedTransformations.tsx
+│   │   ├── BeforeAfterShowcase.tsx
+│   │   ├── FeaturedGallery.tsx
+│   │   ├── WorkshopPreview.tsx
+│   │   ├── Testimonials.tsx
+│   │   └── HomeCTA.tsx
+│   │
+│   ├── about/
+│   │   ├── ArtistHero.tsx
+│   │   ├── ArtistStory.tsx
+│   │   ├── CreativeProcess.tsx
+│   │   └── Achievements.tsx
+│   │
+│   ├── commission/
+│   │   ├── CommissionHero.tsx
+│   │   ├── CommissionProcess.tsx
+│   │   ├── CommissionBenefits.tsx
+│   │   ├── CommissionExamples.tsx
+│   │   └── CommissionCTA.tsx
+│   │
+│   ├── gallery/
+│   │   ├── GalleryGrid.tsx
+│   │   ├── GalleryCard.tsx
+│   │   ├── GalleryFilters.tsx
+│   │   ├── GalleryLightbox.tsx
+│   │   ├── ProjectGallery.tsx
+│   │   └── BeforeAfterSlider.tsx
+│   │
+│   ├── workshops/
+│   │   ├── WorkshopHero.tsx
+│   │   ├── WorkshopCard.tsx
+│   │   └── WorkshopGrid.tsx
+│   │
+│   ├── forms/
+│   │   ├── CommissionForm.tsx
+│   │   ├── CommissionSteps/
+│   │   │   ├── ProjectTypeStep.tsx
+│   │   │   ├── FurnitureDetailsStep.tsx
+│   │   │   ├── DesignPreferencesStep.tsx
+│   │   │   ├── BudgetTimelineStep.tsx
+│   │   │   └── ContactDetailsStep.tsx
+│   │   ├── WorkshopEnquiryForm.tsx
+│   │   ├── GeneralEnquiryForm.tsx
+│   │   ├── FormProgress.tsx
+│   │   ├── FormField.tsx
+│   │   ├── ImageUpload.tsx
+│   │   └── FormSubmissionStatus.tsx
+│   │
+│   ├── faq/
+│   │   └── FAQAccordion.tsx
+│   │
+│   ├── shared/
+│   │   ├── Container.tsx
+│   │   ├── Button.tsx
+│   │   ├── SectionHeading.tsx
+│   │   ├── PageHero.tsx
+│   │   ├── Reveal.tsx
+│   │   ├── ImageWithCaption.tsx
+│   │   └── SectionDivider.tsx
+│   │
+│   └── animations/
+│       ├── PageTransition.tsx
+│       ├── StaggerContainer.tsx
+│       └── ImageReveal.tsx
+│
+├── data/
+│   ├── navigation.ts
+│   ├── site.ts
+│   ├── gallery.ts
+│   ├── gallery-categories.ts
+│   ├── workshops.ts
+│   ├── testimonials.ts
+│   ├── achievements.ts
+│   └── faq.ts
+│
+├── lib/
+│   ├── validations/
+│   │   ├── commission-schema.ts
+│   │   ├── workshop-schema.ts
+│   │   └── contact-schema.ts
+│   │
+│   ├── email/
+│   │   ├── resend.ts
+│   │   └── templates/
+│   │       ├── commission-notification.tsx
+│   │       ├── workshop-notification.tsx
+│   │       └── enquiry-confirmation.tsx
+│   │
+│   ├── supabase/
+│   │   ├── client.ts
+│   │   └── storage.ts
+│   │
+│   ├── utils.ts
+│   └── constants.ts
+│
+├── hooks/
+│   ├── useMobileMenu.ts
+│   └── useLightbox.ts
+│
+├── types/
+│   ├── gallery.ts
+│   ├── workshop.ts
+│   ├── testimonial.ts
+│   ├── forms.ts
+│   └── navigation.ts
+│
+├── public/
+│   ├── images/
+│   │   ├── brand/
+│   │   ├── hero/
+│   │   ├── artist/
+│   │   ├── gallery/
+│   │   │   ├── sideboards/
+│   │   │   ├── cabinets/
+│   │   │   ├── tables/
+│   │   │   ├── chairs/
+│   │   │   ├── outdoor/
+│   │   │   └── transformations/
+│   │   ├── workshops/
+│   │   ├── achievements/
+│   │   └── textures/
+│   ├── fonts/
+│   └── icons/
+│
+├── .env.example
+├── .env.local
+├── next.config.ts
+├── package.json
+├── postcss.config.mjs
+└── tsconfig.json
