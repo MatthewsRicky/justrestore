@@ -1,12 +1,15 @@
+"use client";
+
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+
+import EditorialImage from "@/components/shared/EditorialImage";
 
 export default function HomeHero() {
   return (
     <section className="relative overflow-hidden bg-ivory">
-      <div className="container-main grid min-h-[650px] items-center gap-12 py-16 lg:min-h-[760px] lg:grid-cols-[0.95fr_1.05fr] lg:gap-10 lg:py-20">
-        {/* Hero copy */}
+      <div className="container-main grid min-h-[650px] items-center gap-12 py-14 lg:min-h-[760px] lg:grid-cols-[0.95fr_1.05fr] lg:gap-10 lg:py-20">
         <div className="relative z-10 max-w-2xl">
           <motion.p
             initial={{ opacity: 0, y: 15 }}
@@ -27,7 +30,7 @@ export default function HomeHero() {
             <br />
             with a
             <br />
-            <span className="text-terracotta italic">story to tell.</span>
+            <span className="italic text-terracotta">story to tell.</span>
           </motion.h1>
 
           <motion.p
@@ -60,7 +63,7 @@ export default function HomeHero() {
 
             <Link
               href="/commission"
-              className="flex items-center gap-2 border-b border-ink/30 py-3 text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors hover:border-terracotta hover:text-terracotta"
+              className="border-b border-ink/30 py-3 text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors hover:border-terracotta hover:text-terracotta"
             >
               Commission a piece
             </Link>
@@ -71,38 +74,32 @@ export default function HomeHero() {
           </p>
         </div>
 
-        {/* Temporary artistic composition */}
         <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="relative mx-auto aspect-[4/4.5] w-full max-w-[620px]"
+          className="relative mx-auto w-full max-w-[620px]"
         >
-          <div className="absolute inset-4 rotate-[-4deg] bg-ochre/80" />
+          <div className="absolute -inset-3 rotate-[-3deg] bg-ochre/60" />
 
-          <div className="absolute inset-0 overflow-hidden bg-paper">
-            <div className="absolute -right-12 -top-12 size-64 rounded-full bg-terracotta/80 blur-[1px]" />
+          <EditorialImage
+            src="/images/home/hero-main.avif"
+            alt="Featured artistic furniture by JustRestore"
+            label="Main homepage furniture photograph"
+            aspectRatio="4 / 4.5"
+            className="relative"
+            priority
+            showImage
+          />
 
-            <div className="absolute -bottom-20 -left-10 size-72 rounded-full bg-sage/80" />
-
-            <div className="absolute left-[22%] top-[18%] h-[58%] w-[58%] rotate-[8deg] border-[12px] border-ink/15 bg-ivory/70 shadow-2xl">
-              <div className="absolute inset-4 border border-terracotta/60" />
-
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-7xl italic text-terracotta/90">
-                Art
-              </div>
-            </div>
-
-            <div className="absolute bottom-7 right-7 max-w-[150px] bg-ivory px-5 py-4 shadow-lg">
-              <p className="editorial-label text-terracotta">JustRestore</p>
-
-              <p className="mt-2 font-display text-2xl leading-tight">
-                A different kind of beautiful.
-              </p>
-            </div>
+          <div className="absolute -bottom-5 -left-3 bg-ivory p-5 shadow-lg sm:-left-8 sm:p-7">
+            <p className="editorial-label text-terracotta">
+              Art meets function
+            </p>
+            <p className="mt-2 max-w-[160px] font-display text-2xl leading-tight">
+              A different kind of beautiful.
+            </p>
           </div>
-
-          <div className="absolute -bottom-5 -left-3 size-20 rounded-full border border-terracotta/60 lg:-left-8" />
         </motion.div>
       </div>
 
