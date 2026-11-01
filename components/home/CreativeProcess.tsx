@@ -45,10 +45,11 @@ export default function CreativeProcess() {
 
             <div className="mt-10">
               <EditorialImage
-                src="/images/home/process-detail.jpg"
+                src="/images/home/gallery-3.avif"
                 alt="Close-up of furniture painting and artistic detail"
                 label="Creative process and artistic detail"
                 aspectRatio="5 / 4"
+                showImage
               />
             </div>
           </div>

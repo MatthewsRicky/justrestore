@@ -47,10 +47,12 @@ export default function HomeCTA() {
 
         <div className="relative min-h-[400px] lg:min-h-full">
           <EditorialImage
+          src="/images/home/featured-7.avif"
             alt="Featured artistic furniture transformation"
             label="Hero artwork for the commission call to action"
             aspectRatio="4 / 5"
             className="h-full w-full"
+            showImage
           />
 
           <div className="absolute bottom-6 left-6 bg-ivory px-5 py-4 text-ink sm:bottom-10 sm:left-10">

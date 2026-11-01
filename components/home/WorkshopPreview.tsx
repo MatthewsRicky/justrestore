@@ -35,13 +35,14 @@ export default function WorkshopPreview() {
           </Link>
         </div>
 
-        <div className="min-h-[360px] lg:min-h-[650px]">
+        <div className="flex min-h-[420px] items-center justify-center px-8 py-14 sm:px-14 lg:min-h-[650px] lg:px-16 lg:py-20">
           <EditorialImage
-            src="/images/home/workshop.jpg"
+            src="/images/workshops/workshop-1.avif"
             alt="Creative furniture painting workshop"
             label="Workshop and creative learning photography"
             aspectRatio="4 / 5"
-            className="h-full w-full"
+            className="w-full max-w-[320px] rounded-lg shadow-lg shadow-black/20 transition-transform duration-700 hover:scale-[1.02] sm:max-w-[360px] lg:max-w-[380px]"
+            showImage
           />
         </div>
       </div>

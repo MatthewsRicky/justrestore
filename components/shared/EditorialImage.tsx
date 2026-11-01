@@ -37,7 +37,7 @@ export default function EditorialImage({
           fill
           priority={priority}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
-          className={`transition-transform duration-700 ${
+          className={`transition-transform duration-700  ${
             fit === "contain"
               ? "object-contain"
               : "object-cover hover:scale-[1.035]"

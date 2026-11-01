@@ -4,22 +4,22 @@ import EditorialImage from "@/components/shared/EditorialImage";
 
 const transformations = [
   {
-    image: "/images/home/transformation-1.avif",
+    image: "/images/before-after/restoration-1.avif",
     title: "Transformation 01",
     description: "A new perspective on a familiar piece.",
   },
   {
-    image: "/images/home/transformation-2.avif",
+    image: "/images/before-after/restoration-2.avif",
     title: "Transformation 02",
     description: "Giving character another chance to shine.",
   },
   {
-    image: "/images/home/transformation-3.avif",
+    image: "/images/before-after/restoration-3.avif",
     title: "Transformation 03",
     description: "An individual expression through design.",
   },
   {
-    image: "/images/home/transformation-4.avif",
+    image: "/images/before-after/restoration-4.avif",
     title: "Transformation 04",
     description: "A different story for an existing piece.",
   },
