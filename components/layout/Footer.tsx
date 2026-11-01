@@ -10,6 +10,8 @@ const footerLinks = [
   { label: "FAQs", href: "/faq" },
 ];
 
+const currentDate = new Date().getFullYear();
+
 export default function Footer() {
   return (
     <footer className="bg-ink text-ivory">
@@ -68,7 +70,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col justify-between gap-4 border-t border-white/15 pt-7 text-xs text-ivory/50 sm:flex-row">
-          <p>© {new Date().getFullYear()} JustRestore. All rights reserved.</p>
+          <p>© {currentDate} JustRestore. All rights reserved.</p>
 
           <div className="flex gap-6">
             <Link href="/terms" className="hover:text-white">

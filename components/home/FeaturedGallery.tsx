@@ -6,25 +6,25 @@ const featuredWorks = [
   {
     title: "Statement Sideboards",
     category: "Sideboards",
-    image: "/images/home/featured-1.avif",
+    image: "/images/home/featured-10.avif",
     aspect: "5 / 4",
   },
   {
     title: "Characterful Cabinets",
     category: "Cabinets",
-    image: "/images/home/featured-2.avif",
+    image: "/images/home/featured-8.avif",
     aspect: "5 / 4",
   },
   {
     title: "Unexpected Details",
     category: "Artistic Details",
-    image: "/images/home/featured-3.avif",
+    image: "/images/home/featured-9.avif",
     aspect: "5 / 4",
   },
   {
     title: "Furniture Reimagined",
     category: "Transformations",
-    image: "/images/home/featured-4.avif",
+    image: "/images/home/featured-7.avif",
     aspect: "5 / 4",
   },
 ];
@@ -65,6 +65,7 @@ export default function FeaturedGallery() {
                 alt={`${work.title} by JustRestore`}
                 label={`${work.category} portfolio photograph`}
                 aspectRatio={work.aspect}
+                className="rounded-2xl shadow-md shadow-ink/30 transition-transform duration-400 group-hover:scale-[1.01] group-hover:shadow-lg group-hover:shadow-ink/60"
               />
 
               <div className="mt-5 flex items-start justify-between gap-4">
