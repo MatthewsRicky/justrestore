@@ -11,6 +11,12 @@ export type GalleryImage = {
   caption?: string;
 };
 
+export type GalleryAsset = {
+  slug: string;
+  src: string;
+  alt: string;
+};
+
 export type GalleryProject = {
   slug: string;
   category: string;
@@ -19,5 +25,4 @@ export type GalleryProject = {
   thumbnail: GalleryImage;
   images: GalleryImage[];
   featured?: boolean;
-  layout?: "regular" | "wide" | "tall" | "large";
 };

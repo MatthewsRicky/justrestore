@@ -32,7 +32,7 @@ export default function GalleryPage() {
             </p>
           </div>
 
-          <div className="mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-x-3 gap-y-4 sm:grid-cols-2 lg:grid-cols-3 items-center">
             {galleryCategories.map((category, index) => (
               <GalleryCategoryCard
                 key={category.slug}

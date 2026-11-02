@@ -1,14 +1,60 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import GalleryGrid from "@/components/gallery/GalleryGrid";
+
 import { galleryCategories } from "@/data/gallery/categories";
-import { getProjectsByCategory } from "@/data/gallery/projects";
+import { getGalleryImagesByCategory } from "@/data/gallery/gallery-projects";
 
 type GalleryCategoryPageProps = {
   params: Promise<{
     category: string;
   }>;
 };
+
+function GalleryImageCard({
+  src,
+  alt,
+  index,
+}: {
+  src: string;
+  alt: string;
+  index: number;
+}) {
+  return (
+    <figure className="mb-4 w-full break-inside-avoid sm:mb-5">
+      <Image
+        src={src}
+        alt={alt}
+        width={1200}
+        height={1200}
+        priority={index < 2}
+        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+        className="block h-auto w-full"
+        style={{
+          objectFit: "contain",
+          maxWidth: "100%",
+        }}
+      />
+    </figure>
+  );
+}
+
+export async function generateMetadata({ params }: GalleryCategoryPageProps) {
+  const { category: categorySlug } = await params;
+
+  const category = galleryCategories.find((item) => item.slug === categorySlug);
+
+  if (!category) {
+    return {
+      title: "Collection Not Found | JustRestore",
+    };
+  }
+
+  return {
+    title: `${category.title} | JustRestore`,
+    description: `Explore the ${category.title} collection by JustRestore.`,
+  };
+}
 
 export default async function GalleryCategoryPage({
   params,
@@ -21,7 +67,7 @@ export default async function GalleryCategoryPage({
     notFound();
   }
 
-  const projects = getProjectsByCategory(categorySlug);
+  const images = getGalleryImagesByCategory(categorySlug);
 
   return (
     <section className="section-padding bg-ivory">
@@ -33,7 +79,7 @@ export default async function GalleryCategoryPage({
           ← Back to gallery
         </Link>
 
-        <div className="mt-12 max-w-3xl">
+        <header className="mt-12 max-w-3xl">
           <p className="editorial-label text-terracotta">
             JustRestore collection
           </p>
@@ -47,10 +93,45 @@ export default async function GalleryCategoryPage({
               {category.description}
             </p>
           )}
-        </div>
 
-        <div className="mt-14">
-          <GalleryGrid projects={projects} />
+          <p className="mt-6 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted">
+            {images.length} {images.length === 1 ? "image" : "images"}
+          </p>
+        </header>
+
+        {images.length > 0 ? (
+          <div className="mt-14 columns-2 gap-4 sm:columns-3 lg:columns-4 xl:gap-5">
+            {images.map((image, index) => (
+              <GalleryImageCard
+                key={image.slug}
+                src={image.src}
+                alt={image.alt}
+                index={index}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="py-24 text-center">
+            <h2 className="font-display text-3xl">
+              Something beautiful is coming.
+            </h2>
+
+            <p className="mt-4 text-sm leading-7 text-muted">
+              This collection is being prepared. Please check back soon.
+            </p>
+          </div>
+        )}
+
+        <div className="mt-20 border-t border-ink/15 pt-10">
+          <Link
+            href="/gallery"
+            className="group inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.15em] transition-colors hover:text-terracotta"
+          >
+            Explore other collections
+            <span className="transition-transform group-hover:translate-x-1">
+              →
+            </span>
+          </Link>
         </div>
       </div>
     </section>

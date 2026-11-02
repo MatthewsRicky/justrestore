@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-import EditorialImage from "@/components/shared/EditorialImage";
+
 import type { GalleryCategory } from "@/types/gallery";
 
 type GalleryCategoryCardProps = {
@@ -14,31 +14,26 @@ export default function GalleryCategoryCard({
 }: GalleryCategoryCardProps) {
   return (
     <Link href={`/gallery/${category.slug}`} className="group block">
-      <div className="relative overflow-hidden">
-        <EditorialImage
-          src={category.coverImage}
-          showImage={Boolean(category.coverImage)}
-          alt={`${category.title} portfolio collection`}
-          label={category.title}
-          aspectRatio={index % 3 === 0 ? "4 / 5" : "5 / 4"}
-          className="transition-transform duration-700 group-hover:scale-[1.015]"
+      <div className="">
+        <Image
+          src={category.coverImage  || "/images/gallery/placeholder.avif"}
+          alt={category.title}
+          width={800}
+          height={800}
+          priority={index < 3}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="mx-auto block h-auto w-auto max-w-full transition-transform duration-700 group-hover:scale-[1.02] rounded-lg shadow-lg shadow-amber-500/40"
         />
-
-        <span className="absolute right-4 top-4 flex size-10 items-center justify-center rounded-full bg-ivory text-ink transition-colors duration-300 group-hover:bg-terracotta group-hover:text-white">
-          <ArrowUpRight size={18} />
-        </span>
       </div>
 
-      <div className="mt-4 flex items-start justify-between gap-3">
-        <div>
-          <p className="editorial-label text-terracotta">
-            Collection {String(index + 1).padStart(2, "0")}
-          </p>
+      <div className="mt-5 flex items-start justify-center gap-4">
+        <h2 className="font-display text-2xl leading-tight">
+          {category.title}
+        </h2>
 
-          <h2 className="mt-2 font-display text-2xl leading-tight transition-colors group-hover:text-terracotta sm:text-3xl">
-            {category.title}
-          </h2>
-        </div>
+        <span className="mt-1 text-terracotta transition-transform duration-300 group-hover:translate-x-1">
+          →
+        </span>
       </div>
     </Link>
   );

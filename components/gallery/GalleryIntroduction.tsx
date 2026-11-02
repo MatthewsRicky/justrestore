@@ -1,66 +1,75 @@
-import EditorialImage from "@/components/shared/EditorialImage";
+import Image from "next/image";
 
 const galleryImages = [
   {
-    image: "/images/home/gallery-1.avif",
-    alt: "Selected furniture artwork by JustRestore",
-    label: "Featured gallery work",
+    src: "/images/home/gallery-1.avif",
+    alt: "A selection of restored furniture and creative transformations",
   },
   {
-    image: "/images/home/gallery-2.avif",
-    alt: "Artistic furniture restoration by JustRestore",
-    label: "Furniture transformation",
+    src: "/images/home/gallery-2.avif",
+    alt: "A distinctive furniture restoration project",
   },
   {
-    image: "/images/home/gallery-3.avif",
-    alt: "Creative furniture detailing by JustRestore",
-    label: "Artistic details",
+    src: "/images/home/gallery-3.avif",
+    alt: "A collection of creatively restored furniture",
   },
   {
-    image: "/images/home/gallery-4.avif",
-    alt: "Reimagined furniture piece by JustRestore",
-    label: "Selected artwork",
+    src: "/images/home/gallery-4.avif",
+    alt: "Details from the JustRestore furniture collection",
   },
 ];
 
 export default function GalleryIntroduction() {
   return (
-    <section className="bg-ivory pb-16 pt-16 sm:pb-20 sm:pt-24">
+    <section className="overflow-hidden bg-paper section-padding">
       <div className="container-main">
-        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
-          <div>
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          {/* Introduction */}
+          <div className="max-w-xl">
             <p className="editorial-label text-terracotta">
-              The JustRestore collection
+              The art of transformation
             </p>
 
-            <h1 className="mt-5 font-display text-6xl leading-[0.95] sm:text-7xl lg:text-8xl">
-              Art with
+            <h2 className="mt-6 font-display text-5xl leading-[1.05] sm:text-6xl lg:text-7xl">
+              Every piece
               <br />
-              <span className="italic text-terracotta">character.</span>
-            </h1>
-          </div>
+              has a story
+              <span className="italic text-terracotta"> to tell.</span>
+            </h2>
 
-          <div className="max-w-xl lg:pb-2">
-            <p className="text-base leading-8 text-muted sm:text-lg">
-              Explore a collection of furniture transformations, artistic
-              details and individual pieces. Each work offers a different
-              perspective on what furniture can become.
+            <p className="mt-7 max-w-lg text-sm leading-7 text-muted sm:text-base sm:leading-8">
+              Discover a collection of furniture transformations, thoughtful
+              restorations and creative pieces. Each project offers a different
+              expression of character, craftsmanship and imagination.
+            </p>
+
+            <p className="mt-5 text-sm leading-7 text-muted sm:text-base">
+              Explore the collections and find inspiration in the possibilities
+              of giving something a new life.
             </p>
           </div>
-        </div>
 
-        <div className="mt-12 grid grid-cols-2 gap-3 sm:mt-16 sm:gap-5">
-          {galleryImages.map((item, index) => (
-            <div key={item.image} className={index % 2 === 1 ? "sm:mt-12" : ""}>
-              <EditorialImage
-                src={item.image}
-                showImage
-                alt={item.alt}
-                label={item.label}
-                aspectRatio="5 / 4"
-              />
-            </div>
-          ))}
+          {/* Image collage */}
+          <div className="grid grid-cols-2 items-start gap-[0.5] sm:gap-6">
+            {galleryImages.map((image, index) => (
+              <div
+                key={image.src}
+                className={`flex items-start justify-center ${
+                  index === 1 || index === 3 ? "mt-10 sm:mt-16" : ""
+                }`}
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={800}
+                  height={800}
+                  priority={index < 2}
+                  sizes="(max-width: 640px) 45vw, (max-width: 1024px) 40vw, 25vw"
+                  className="block h-auto w-auto max-w-full"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
