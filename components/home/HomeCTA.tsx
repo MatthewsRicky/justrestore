@@ -27,7 +27,7 @@ export default function HomeCTA() {
           </p>
 
           <Link
-            href="/commission"
+            href="/contact?type=commission"
             className="group mt-10 flex w-fit items-center gap-5 bg-ochre px-7 py-5 text-[11px] font-semibold uppercase tracking-[0.13em] text-ink transition-colors hover:bg-ivory"
           >
             Start your commission

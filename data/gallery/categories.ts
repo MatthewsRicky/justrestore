@@ -4,7 +4,7 @@ export const galleryCategories: GalleryCategory[] = [
   {
     slug: "transformation-magic",
     title: "Transformation Magic Before/After",
-    coverImage: "/images/before-after/restoration-1.avif",
+    coverImage: "/images/before-after/restoration-9.avif",
   },
   {
     slug: "sideboards-buffets",

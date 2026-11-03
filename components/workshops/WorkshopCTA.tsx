@@ -15,7 +15,7 @@ export default function WorkshopCTA() {
           </p>
 
           <a
-            href="/contact"
+            href="/contact?type=workshop"
             className="mt-9 inline-flex items-center gap-3 border border-safari-gold px-7 py-4 text-sm font-medium text-safari-gold transition-colors hover:bg-safari-gold hover:text-maroon-deep"
           >
             Get in touch

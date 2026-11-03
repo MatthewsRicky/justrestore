@@ -62,7 +62,7 @@ export default function HomeHero() {
             </Link>
 
             <Link
-              href="/commission"
+              href="/contact?type=commission"
               className="border-b border-ink/30 py-3 text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors hover:border-terracotta hover:text-terracotta"
             >
               Commission a piece

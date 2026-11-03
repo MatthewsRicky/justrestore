@@ -24,9 +24,13 @@ export const navigationItems: NavigationItem[] = [
     label: "Contact",
     href: "/contact",
   },
+  {
+    label: "FAQs",
+    href: "/faq",
+  },
 ];
 
 export const commissionLink = {
   label: "Commission a Piece",
-  href: "/commission",
+  href: "/contact?type=commission",
 };

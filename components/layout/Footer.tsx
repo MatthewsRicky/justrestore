@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
 const footerLinks = [
@@ -18,16 +19,34 @@ export default function Footer() {
       <div className="container-main py-16 sm:py-20 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_0.7fr_0.9fr] lg:gap-16">
           <div>
-            <p className="editorial-label text-ochre">
-              Art. Furniture. Transformation.
-            </p>
+            <Link
+              href="/"
+              aria-label="JustRestore home"
+              className="relative z-[60] flex gap-4 items-center"
+            >
+              <Image
+                src="/images/logo.avif"
+                alt="JustRestore logo"
+                width={80}
+                height={80}
+                priority
+              />
+              <div className="flex flex-col">
+                <span className="font-display text-[32px] font-semibold leading-none tracking-[-0.04em]">
+                  JustRestore<span className="text-terracotta">.</span>
+                </span>
+                <span className="mt-1 text-[8px] font-medium uppercase tracking-[0.25em] text-muted">
+                  Art. Furniture. Transformation.
+                </span>
+              </div>
+            </Link>
 
             <h2 className="mt-5 max-w-xl font-display text-5xl leading-[0.95] sm:text-6xl">
               Making everyday life a little more extraordinary.
             </h2>
 
             <Link
-              href="/commission"
+              href="/contact?type=commission"
               className="mt-8 inline-flex items-center gap-3 border-b border-ochre pb-2 text-sm transition-colors hover:text-ochre"
             >
               Start a commission
@@ -73,7 +92,7 @@ export default function Footer() {
           <p>© {currentDate} JustRestore. All rights reserved.</p>
 
           <div className="flex gap-6">
-            <Link href="/terms" className="hover:text-white">
+            <Link href="/terms-and-conditions" className="hover:text-white">
               Terms & Conditions
             </Link>
           </div>

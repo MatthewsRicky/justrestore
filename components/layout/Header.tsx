@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
 import { commissionLink, navigationItems } from "@/data/navigation";
+import Image from "next/image";
 
 export default function Header() {
   const pathname = usePathname();
@@ -59,20 +60,28 @@ export default function Header() {
           : "bg-ivory"
       }`}
     >
-      <div className="container-main flex h-[76px] items-center justify-between lg:h-[88px]">
+      <div className="container-main flex h-[80px] items-center justify-between lg:h-[88px]">
         {/* Brand */}
         <Link
           href="/"
           aria-label="JustRestore home"
-          className="relative z-[60] flex flex-col"
+          className="relative z-[60] flex gap-4 items-center"
         >
-          <span className="font-display text-[32px] font-semibold leading-none tracking-[-0.04em]">
-            JustRestore<span className="text-terracotta">.</span>
-          </span>
-
-          <span className="mt-1 text-[8px] font-medium uppercase tracking-[0.25em] text-muted">
-            Art. Furniture. Transformation.
-          </span>
+          <Image
+            src="/images/logo.avif"
+            alt="JustRestore logo"
+            width={80}
+            height={80}
+            priority
+          />
+          <div className="flex flex-col">
+            <span className="font-display text-[32px] font-semibold leading-none tracking-[-0.04em]">
+              JustRestore<span className="text-terracotta">.</span>
+            </span>
+            <span className="mt-1 text-[8px] font-medium uppercase tracking-[0.25em] text-muted">
+              Art. Furniture. Transformation.
+            </span>
+          </div>
         </Link>
 
         {/* Desktop navigation */}

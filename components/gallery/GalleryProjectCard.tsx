@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import type { GalleryProject } from "@/types/gallery";
+
+import type { GalleryProject, GalleryProjectLayout } from "@/types/gallery";
 
 type GalleryProjectCardProps = {
   project: GalleryProject;
 };
 
-const layoutClasses = {
+const layoutClasses: Record<GalleryProjectLayout, string> = {
   regular: "",
   wide: "lg:col-span-2",
   tall: "lg:row-span-2",
@@ -17,10 +18,12 @@ const layoutClasses = {
 export default function GalleryProjectCard({
   project,
 }: GalleryProjectCardProps) {
+  const layout = project.layout ?? "regular";
+
   return (
     <Link
       href={`/gallery/${project.category}/${project.slug}`}
-      className={`group relative block min-h-[260px] overflow-hidden bg-paper ${layoutClasses[project.layout ?? "regular"]}`}
+      className={`group relative block min-h-[260px] overflow-hidden bg-paper ${layoutClasses[layout]}`}
     >
       <Image
         src={project.thumbnail.src}

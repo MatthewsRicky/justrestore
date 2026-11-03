@@ -1,3 +1,5 @@
+export type GalleryProjectLayout = "regular" | "wide" | "tall" | "large";
+
 export type GalleryCategory = {
   slug: string;
   title: string;
@@ -18,11 +20,14 @@ export type GalleryAsset = {
 };
 
 export type GalleryProject = {
+  // Keep your existing properties
   slug: string;
   category: string;
   title: string;
   description?: string;
-  thumbnail: GalleryImage;
-  images: GalleryImage[];
-  featured?: boolean;
+  thumbnail: {
+    src: string;
+    alt: string;
+  };
+  layout?: GalleryProjectLayout;
 };
