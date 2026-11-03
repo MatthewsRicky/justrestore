@@ -8,11 +8,7 @@ export default function MarketingLayout({
 }>) {
   return (
     <>
-      <Header />
-
       <main className="min-h-screen pt-[76px] lg:pt-[88px]">{children}</main>
-
-      <Footer />
     </>
   );
 }
