@@ -1,11 +1,13 @@
+import type { Metadata } from "next";
+
 import AboutIntroduction from "@/components/about/AboutIntroduction";
 import AboutStory from "@/components/about/AboutStory";
 import AboutAchievements from "@/components/about/AboutAchievements";
 
-export const metadata = {
-  title: "About Sabah Bardhan | JustRestore",
+export const metadata: Metadata = {
+  title: "About Sabah Bardhan",
   description:
-    "Meet Sabah Bardhan, the artist behind JustRestore. Discover her furniture painting journey, artistic influences, restoration philosophy and achievements.",
+    "Meet Sabah Bardhan, the artist behind JustRestore. Discover her furniture painting journey, artistic influences, creative approach and achievements.",
 };
 
 export default function AboutPage() {

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+
 import "./globals.css";
+
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
@@ -20,17 +22,21 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "JustRestore | Functional Masterpieces That Tell a Story",
+    default:
+      "JustRestore | Artistic Furniture Transformations by Sabah Bardhan",
     template: "%s | JustRestore",
   },
   description:
-    "Discover the art of furniture transformation with Sabah Bardhan at JustRestore. Explore bespoke furniture commissions, creative workshops and unique artistic transformations.",
+    "Discover artistic furniture transformations by Sabah Bardhan at JustRestore. Explore hand-painted furniture, bespoke commissions and creative furniture painting workshops.",
+  applicationName: "JustRestore",
+  creator: "Sabah Bardhan",
+  publisher: "JustRestore",
   openGraph: {
     type: "website",
     siteName: "JustRestore",
-    title: "JustRestore | Functional Masterpieces That Tell a Story",
+    title: "JustRestore | Artistic Furniture Transformations by Sabah Bardhan",
     description:
-      "Artistic furniture transformations, bespoke commissions and creative workshops.",
+      "Explore unique furniture transformations, bespoke commissions and creative workshops by artist Sabah Bardhan.",
   },
 };
 
@@ -45,7 +51,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        </body>
+      </body>
     </html>
   );
 }

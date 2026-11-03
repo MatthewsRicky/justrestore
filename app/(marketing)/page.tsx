@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
+
 import HomeHero from "@/components/home/HomeHero";
 import Container from "@/components/shared/Container";
 import SectionHeading from "@/components/shared/SectionHeading";
 import Button from "@/components/shared/Button";
+
+export const metadata: Metadata = {
+  title: "Hand-Painted Furniture & Bespoke Commissions",
+  description:
+    "Explore Sabah Bardhan's artistic furniture transformations at JustRestore. Discover hand-painted furniture, bespoke restoration commissions and creative workshops.",
+};
 
 export default function HomePage() {
   return (
@@ -58,7 +66,7 @@ export default function HomePage() {
                 title: "Commissions",
                 description:
                   "Give an existing piece a completely new identity.",
-                href: "/commission",
+                href: "/contact?type=commission",
               },
               {
                 number: "03",

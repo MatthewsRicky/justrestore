@@ -4,7 +4,7 @@ import EditorialImage from "@/components/shared/EditorialImage";
 
 export default function HomeCTA() {
   return (
-    <section className="overflow-hidden bg-ink text-ivory">
+    <section className="overflow-hidden max-h-fit bg-ink text-ivory">
       <div className="grid lg:grid-cols-[1.15fr_0.85fr]">
         <div className="flex flex-col justify-center px-6 py-20 sm:px-10 lg:px-16 lg:py-28">
           <p className="editorial-label text-ochre">
@@ -45,7 +45,7 @@ export default function HomeCTA() {
           </Link>
         </div>
 
-        <div className="relative min-h-[400px] lg:min-h-full">
+        <div className="relative min-h-[200px] lg:min-h-[300px]">
           <EditorialImage
           src="/images/home/featured-7.avif"
             alt="Featured artistic furniture transformation"
