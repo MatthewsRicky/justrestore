@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -39,20 +41,28 @@ function GalleryImageCard({
   );
 }
 
-export async function generateMetadata({ params }: GalleryCategoryPageProps) {
+export async function generateMetadata({
+  params,
+}: GalleryCategoryPageProps): Promise<Metadata> {
   const { category: categorySlug } = await params;
 
   const category = galleryCategories.find((item) => item.slug === categorySlug);
 
   if (!category) {
     return {
-      title: "Collection Not Found | JustRestore",
+      title: "Collection Not Found",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
   return {
-    title: `${category.title} | JustRestore`,
-    description: `Explore the ${category.title} collection by JustRestore.`,
+    title: category.title,
+    description:
+      category.description ??
+      `Explore ${category.title.toLowerCase()} by Sabah Bardhan at JustRestore. Discover creative furniture transformations, artistic finishes and unique restoration ideas.`,
   };
 }
 

@@ -22,7 +22,7 @@ export default function GalleryCategoryCard({
           height={800}
           priority={index < 3}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="mx-auto block h-auto w-auto max-w-full transition-transform duration-700 group-hover:scale-[1.02] rounded-lg shadow-lg shadow-amber-500/40"
+          className="mx-auto block h-auto w-auto max-w-full transition-transform duration-700 group-hover:scale-[1.02] rounded-sm shadow-lg shadow-terracotta/20"
         />
       </div>
 

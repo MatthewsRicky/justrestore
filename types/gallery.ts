@@ -30,4 +30,5 @@ export type GalleryProject = {
     alt: string;
   };
   layout?: GalleryProjectLayout;
+  featured?: boolean;
 };
