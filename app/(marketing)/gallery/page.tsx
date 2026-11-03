@@ -1,11 +1,13 @@
+import type { Metadata } from "next";
+
 import GalleryIntroduction from "@/components/gallery/GalleryIntroduction";
 import GalleryCategoryCard from "@/components/gallery/GalleryCategoryCard";
 import { galleryCategories } from "@/data/gallery/categories";
 
-export const metadata = {
-  title: "Gallery | JustRestore",
+export const metadata: Metadata = {
+  title: "Furniture Transformation Gallery",
   description:
-    "Explore the JustRestore furniture transformations, restorations and creative collections.",
+    "Explore Sabah Bardhan's furniture transformation gallery at JustRestore, featuring hand-painted furniture, creative restorations and unique artistic pieces.",
 };
 
 export default function GalleryPage() {

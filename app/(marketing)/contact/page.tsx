@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import ContactPageContent from "@/components/contact/ContactPageContent";
+
+export const metadata: Metadata = {
+  title: "Contact JustRestore",
+  description:
+    "Get in touch with Sabah Bardhan at JustRestore about bespoke furniture restoration commissions, furniture painting workshops and general enquiries.",
+};
 
 type ContactPageProps = {
   searchParams: Promise<{

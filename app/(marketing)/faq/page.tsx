@@ -1,11 +1,12 @@
+import type { Metadata } from "next";
 import FAQIntroduction from "@/components/faqs/FAQIntroduction";
 import FAQAccordion from "@/components/faqs/FAQAccordion";
 import FAQCTA from "@/components/faqs/FAQCTA";
 
-export const metadata = {
-  title: "Frequently Asked Questions | JustRestore",
+export const metadata: Metadata = {
+  title: "Furniture Restoration FAQs",
   description:
-    "Find answers to common questions about furniture restoration, commissions, Chalk Paint, finishes, delivery, and caring for your restored furniture.",
+    "Find answers to common questions about furniture restoration, bespoke commissions, Chalk Paint, decorative finishes, transportation and caring for restored furniture.",
 };
 
 export default function FAQsPage() {

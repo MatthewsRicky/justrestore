@@ -1,12 +1,14 @@
+import type { Metadata } from "next";
+
 import WorkshopIntroduction from "@/components/workshops/WorkshopIntroduction";
 import WorkshopCard from "@/components/workshops/WorkshopCard";
 import WorkshopCTA from "@/components/workshops/WorkshopCTA";
 import { workshops } from "@/data/workshops";
 
-export const metadata = {
-  title: "Creative Workshops | JustRestore",
+export const metadata: Metadata = {
+  title: "Furniture Painting Workshops",
   description:
-    "Explore JustRestore furniture painting workshops, creative sessions and private masterclasses.",
+    "Discover furniture painting workshops and creative masterclasses with Sabah Bardhan at JustRestore. Explore opportunities to learn decorative painting techniques and transform furniture.",
 };
 
 export default function WorkshopsPage() {

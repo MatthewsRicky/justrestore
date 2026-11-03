@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms and Conditions",
+  description:
+    "Read the JustRestore terms and conditions covering furniture restoration quotes, commissions, payments, transportation, cancellations and refunds.",
+};
+
 const termsSections = [
   {
     number: "01",
