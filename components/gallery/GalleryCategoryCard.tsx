@@ -13,22 +13,22 @@ export default function GalleryCategoryCard({
   index,
 }: GalleryCategoryCardProps) {
   return (
-    <Link href={`/gallery/${category.slug}`} className="group block">
-      <div className="group overflow-hidden rounded-sm shadow-lg md:w-[70%] shadow-terracotta/20">
-        <div className="relative aspect-square overflow-hidden ">
+    <Link href={`/gallery/${category.slug}`} className="group block w-full">
+      <div className="w-full overflow-hidden rounded-sm shadow-lg shadow-terracotta/20">
+        <div className="relative aspect-square overflow-hidden">
           <div className="absolute inset-0 h-4/5 overflow-hidden">
             <Image
               src={category.coverImage || "/images/gallery/placeholder.avif"}
               alt={category.title}
               fill
               priority={index < 3}
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
             />
           </div>
 
           <div className="absolute inset-x-0 bottom-0 flex h-1/5 items-center justify-between gap-3 bg-paper px-4 sm:px-5">
-            <h2 className="font-display text-lg leading-tight sm:text-md">
+            <h2 className="font-display text-lg leading-tight sm:text-xl">
               {category.title}
             </h2>
 

@@ -33,7 +33,7 @@ export default function GalleryProjectCard({
         className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/5 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="absolute bg-gradient-to-t from-black/65 via-black/5 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-100" />
 
       <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 text-white sm:p-6">
         <div>

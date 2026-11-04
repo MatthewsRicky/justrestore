@@ -20,7 +20,7 @@ export default function GalleryGrid({ projects }: GalleryGridProps) {
   }
 
   return (
-    <div className="mt-10 grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="mt-10 grid w-full mx-auto justify-center grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {projects.map((project) => (
         <GalleryProjectCard key={project.slug} project={project} />
       ))}
