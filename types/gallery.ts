@@ -25,9 +25,11 @@ export type GalleryProject = {
   category: string;
   title: string;
   description?: string;
+  images: GalleryImage[];
   thumbnail: {
     src: string;
     alt: string;
+    caption?: string;
   };
   layout?: GalleryProjectLayout;
   featured?: boolean;
