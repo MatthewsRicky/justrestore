@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getCanonicalMetadata } from "@/lib/seo";
 
 import HomeHero from "@/components/home/HomeHero";
 import Container from "@/components/shared/Container";
@@ -6,6 +7,9 @@ import SectionHeading from "@/components/shared/SectionHeading";
 import Button from "@/components/shared/Button";
 
 export const metadata: Metadata = {
+
+  ...getCanonicalMetadata("/"),
+
   title: "Hand-Painted Furniture & Bespoke Commissions",
   description:
     "Explore Sabah Bardhan's artistic furniture transformations at JustRestore. Discover hand-painted furniture, bespoke restoration commissions and creative workshops.",

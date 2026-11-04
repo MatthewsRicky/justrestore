@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { getCanonicalMetadata } from "@/lib/seo";
 
 import GalleryIntroduction from "@/components/gallery/GalleryIntroduction";
 import GalleryCategoryCard from "@/components/gallery/GalleryCategoryCard";
 import { galleryCategories } from "@/data/gallery/categories";
 
 export const metadata: Metadata = {
+  ...getCanonicalMetadata("/gallery"),
   title: "Furniture Transformation Gallery",
   description:
     "Explore Sabah Bardhan's furniture transformation gallery at JustRestore, featuring hand-painted furniture, creative restorations and unique artistic pieces.",

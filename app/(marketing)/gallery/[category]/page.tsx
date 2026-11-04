@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getCanonicalMetadata } from "@/lib/seo";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -59,6 +60,7 @@ export async function generateMetadata({
   }
 
   return {
+    ...getCanonicalMetadata(`/gallery/${categorySlug}`),
     title: category.title,
     description:
       category.description ??

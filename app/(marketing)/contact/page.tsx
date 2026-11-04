@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { getCanonicalMetadata } from "@/lib/seo";
 import { Suspense } from "react";
 import ContactPageContent from "@/components/contact/ContactPageContent";
 
 export const metadata: Metadata = {
+  ...getCanonicalMetadata("/contact"),
   title: "Contact JustRestore",
   description:
     "Get in touch with Sabah Bardhan at JustRestore about bespoke furniture restoration commissions, furniture painting workshops and general enquiries.",

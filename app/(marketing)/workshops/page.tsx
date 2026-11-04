@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getCanonicalMetadata } from "@/lib/seo";
 
 import WorkshopIntroduction from "@/components/workshops/WorkshopIntroduction";
 import WorkshopCard from "@/components/workshops/WorkshopCard";
@@ -6,6 +7,7 @@ import WorkshopCTA from "@/components/workshops/WorkshopCTA";
 import { workshops } from "@/data/workshops";
 
 export const metadata: Metadata = {
+  ...getCanonicalMetadata("/workshops"),
   title: "Furniture Painting Workshops",
   description:
     "Discover furniture painting workshops and creative masterclasses with Sabah Bardhan at JustRestore. Explore opportunities to learn decorative painting techniques and transform furniture.",

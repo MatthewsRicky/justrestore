@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { getCanonicalMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
+  ...getCanonicalMetadata("/terms-and-conditions"),
   title: "Terms and Conditions",
   description:
     "Read the JustRestore terms and conditions covering furniture restoration quotes, commissions, payments, transportation, cancellations and refunds.",
