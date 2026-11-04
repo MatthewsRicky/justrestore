@@ -20,12 +20,9 @@ export default function GalleryGrid({ projects }: GalleryGridProps) {
   }
 
   return (
-    <div className="grid auto-rows-[minmax(13rem,18vw)] grid-cols-2 grid-flow-row-dense gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 lg:gap-5 2xl:grid-cols-5">
+    <div className="mt-10 grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {projects.map((project) => (
-        <GalleryProjectCard
-          key={`${project.category}-${project.slug}`}
-          project={project}
-        />
+        <GalleryProjectCard key={project.slug} project={project} />
       ))}
     </div>
   );
