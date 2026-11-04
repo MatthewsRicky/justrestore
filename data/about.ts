@@ -5,7 +5,7 @@ import type {
 } from "@/types/about";
 
 export const aboutPortrait = {
-  image: "/images/about/sabah bardhan.avif",
+  image: "/images/about/about.jpg",
   alt: "Sabah Bardhan, the artist behind JustRestore",
 };
 
