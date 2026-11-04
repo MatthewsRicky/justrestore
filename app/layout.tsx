@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import StructuredData from "@/components/seo/StructuredData";
 import { siteUrl } from "@/lib/seo";
 
+import { Suspense } from "react";
+
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 
 import "./globals.css";
@@ -58,7 +60,9 @@ export default function RootLayout({
     <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
       <body>
         <StructuredData />
+        <Suspense fallback={null}>
         <Header />
+        </Suspense>
         {children}
         <Footer />
       </body>
