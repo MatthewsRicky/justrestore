@@ -14,26 +14,29 @@ export default function GalleryCategoryCard({
 }: GalleryCategoryCardProps) {
   return (
     <Link href={`/gallery/${category.slug}`} className="group block">
-      <div className="">
-        <Image
-          src={category.coverImage  || "/images/gallery/placeholder.avif"}
-          alt={category.title}
-          width={800}
-          height={800}
-          priority={index < 3}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="mx-auto block h-auto w-auto max-w-full transition-transform duration-700 group-hover:scale-[1.02] rounded-sm shadow-lg shadow-terracotta/20"
-        />
-      </div>
+      <div className="group overflow-hidden rounded-sm shadow-lg md:w-[70%] shadow-terracotta/20">
+        <div className="relative aspect-square overflow-hidden ">
+          <div className="absolute inset-0 h-4/5 overflow-hidden">
+            <Image
+              src={category.coverImage || "/images/gallery/placeholder.avif"}
+              alt={category.title}
+              fill
+              priority={index < 3}
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+            />
+          </div>
 
-      <div className="mt-5 flex items-start justify-center gap-4">
-        <h2 className="font-display text-2xl leading-tight">
-          {category.title}
-        </h2>
+          <div className="absolute inset-x-0 bottom-0 flex h-1/5 items-center justify-between gap-3 bg-paper px-4 sm:px-5">
+            <h2 className="font-display text-lg leading-tight sm:text-md">
+              {category.title}
+            </h2>
 
-        <span className="mt-1 text-terracotta transition-transform duration-300 group-hover:translate-x-1">
-          →
-        </span>
+            <span className="shrink-0 text-terracotta transition-transform duration-300 group-hover:translate-x-1">
+              →
+            </span>
+          </div>
+        </div>
       </div>
     </Link>
   );

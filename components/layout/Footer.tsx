@@ -15,7 +15,7 @@ const currentDate = new Date().getFullYear();
 
 export default function Footer() {
   return (
-    <footer className="bg-ink text-ivory my-10">
+    <footer className="bg-ink text-ivory">
       <div className="container-main py-16 sm:py-20 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_0.7fr_0.9fr] lg:gap-16">
           <div>

@@ -48,7 +48,7 @@ export default function BeforeAfterShowcase() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-x-6 gap-y-10 sm:grid-cols-2">
+        <div className="mx-auto mt-14 grid max-w-4xl gap-x-8 gap-y-12 sm:grid-cols-2">
           {transformations.map((item) => (
             <Link href="/gallery" key={item.title} className="group block">
               <EditorialImage
@@ -57,13 +57,13 @@ export default function BeforeAfterShowcase() {
                 alt={`${item.title}: furniture before and after artistic transformation`}
                 label={`${item.title} before-and-after comparison`}
                 aspectRatio="5 / 4"
-                fit="contain"
+                fit="cover"
                 className="bg-[#e8dfd1]"
               />
 
-              <div className="mt-5 flex items-start justify-between gap-4">
+              <div className="mt-4 flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="font-display text-2xl sm:text-3xl">
+                  <h3 className="font-display text-xl sm:text-2xl">
                     {item.title}
                   </h3>
 
