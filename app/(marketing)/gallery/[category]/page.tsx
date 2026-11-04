@@ -1,10 +1,10 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
-import { getCanonicalMetadata } from "@/lib/seo";
-
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { getCanonicalMetadata } from "@/lib/seo";
 import { galleryCategories } from "@/data/gallery/categories";
 import { getGalleryImagesByCategory } from "@/data/gallery/gallery-projects";
 
@@ -68,9 +68,25 @@ export async function generateMetadata({
   };
 }
 
-export default async function GalleryCategoryPage({
+export default function GalleryCategoryPage({
   params,
 }: GalleryCategoryPageProps) {
+  return (
+    <Suspense
+      fallback={
+        <section className="section-padding bg-ivory">
+          <div className="container-main">
+            <p className="editorial-label text-muted">Loading collection...</p>
+          </div>
+        </section>
+      }
+    >
+      <GalleryCategoryContent params={params} />
+    </Suspense>
+  );
+}
+
+async function GalleryCategoryContent({ params }: GalleryCategoryPageProps) {
   const { category: categorySlug } = await params;
 
   const category = galleryCategories.find((item) => item.slug === categorySlug);
